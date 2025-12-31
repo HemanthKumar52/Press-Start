@@ -7,8 +7,10 @@ import BootSequence from './BootSequence';
 import AccountCreation from './AccountCreation';
 import SkillPath from './SkillPath';
 import ProfileResult from './ProfileResult';
-import NeonCity from './NeonCity';
+import dynamic from 'next/dynamic';
 import { useEffect } from 'react';
+
+const NeonCity = dynamic(() => import('./NeonCity'), { ssr: false });
 
 export default function ExperienceContainer() {
   const step = useStore((state) => state.step);
